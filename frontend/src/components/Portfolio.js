@@ -207,13 +207,13 @@ const Portfolio = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                <Card className="border-gray-700 bg-gray-800 hover:shadow-lg transition-shadow duration-300">
                   <CardHeader>
                     <div className="flex items-center space-x-3 mb-4">
-                      <div className="p-2 bg-gray-100 rounded-lg">
+                      <div className="p-2 bg-gray-700 rounded-lg">
                         {category.icon}
                       </div>
-                      <CardTitle className="text-xl font-normal">{category.category}</CardTitle>
+                      <CardTitle className="text-xl font-normal text-white">{category.category}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -222,7 +222,7 @@ const Portfolio = () => {
                         <Badge 
                           key={skillIndex}
                           variant="secondary" 
-                          className="bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200"
+                          className="bg-gray-700 text-gray-200 hover:bg-gray-600 transition-colors duration-200"
                         >
                           {skill}
                         </Badge>
