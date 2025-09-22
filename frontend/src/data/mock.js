@@ -94,18 +94,13 @@ const mockData = {
 
   contact: [
     {
-      icon: <Phone className="w-5 h-5" />,
-      label: "4806928885",
-      href: "tel:4806928885"
-    },
-    {
       icon: <Mail className="w-5 h-5" />,
       label: "saurabh.pandeyy@gmail.com",
       href: "mailto:saurabh.pandeyy@gmail.com"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      label: "LinkedIn Profile",
+      label: "www.linkedin.com/in/saurabhpandeyy",
       href: "https://www.linkedin.com/in/saurabhpandeyy"
     }
   ]
