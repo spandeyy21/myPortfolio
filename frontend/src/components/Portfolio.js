@@ -249,14 +249,27 @@ const Portfolio = () => {
 
               {/* Profile image with creative mask */}
               <div className="relative z-10 w-80 h-96 flex items-center justify-center">
-                <div className="relative w-64 h-80">
+                <div className="relative w-64 h-80 overflow-hidden rounded-3xl shadow-2xl">
                   <div 
-                    className="w-full h-full bg-cover bg-center bg-no-repeat rounded-3xl shadow-2xl"
+                    className="absolute inset-0"
                     style={{
-                      backgroundImage: `url('https://customer-assets.emergentagent.com/job_data-governance-1/artifacts/hqmhyi1a_profile%20photo.jpg')`,
                       clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
                     }}
-                  ></div>
+                  >
+                    <img 
+                      src="https://customer-assets.emergentagent.com/job_data-governance-1/artifacts/hqmhyi1a_profile%20photo.jpg"
+                      alt="Saurabh Pandey - Senior Privacy Engineer"
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                      crossOrigin="anonymous"
+                      onError={(e) => {
+                        console.error('Image failed to load:', e);
+                        e.target.style.backgroundColor = '#4a5568';
+                        e.target.alt = 'Profile image loading...';
+                      }}
+                      onLoad={() => console.log('Profile image loaded successfully')}
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
