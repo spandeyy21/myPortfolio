@@ -131,7 +131,7 @@ const Portfolio = () => {
           >
             <button
               onClick={() => scrollToSection("about")}
-              className="animate-bounce p-2 rounded-full hover:bg-gray-50 transition-colors duration-300"
+              className="animate-bounce p-2 rounded-full hover:bg-gray-800 transition-colors duration-300"
             >
               <ChevronDown className="w-6 h-6 text-gray-400" />
             </button>
