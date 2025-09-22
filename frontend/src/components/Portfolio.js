@@ -197,85 +197,31 @@ const Portfolio = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
-            {/* Creative Profile Image Section */}
+            {/* Simple Profile Image Section */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative flex justify-center lg:justify-start"
             >
-              {/* Background creative shapes */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-80 h-96">
-                  {/* Colorful background sections */}
-                  <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-b from-yellow-400/80 to-yellow-500/80 rounded-l-3xl"></div>
-                  <div className="absolute top-0 left-20 w-32 h-full bg-gradient-to-b from-cyan-400/80 to-blue-500/80"></div>
-                  <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-b from-blue-500/80 to-purple-600/80 rounded-r-3xl"></div>
-                  
-                  {/* Pattern overlays */}
-                  <div className="absolute top-4 left-4 w-28 h-full opacity-60">
-                    <div className="grid grid-cols-6 gap-1 h-full">
-                      {[...Array(150)].map((_, i) => (
-                        <div key={i} className="w-1 h-1 bg-gray-900 rounded-full"></div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="absolute top-4 left-24 w-28 h-full opacity-40">
-                    <div className="grid grid-cols-6 gap-1 h-full">
-                      {[...Array(150)].map((_, i) => (
-                        <div key={i} className="w-1 h-1 bg-white rounded-full"></div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Decorative elements */}
-                  <div className="absolute top-8 right-8 space-y-2">
-                    {[...Array(8)].map((_, i) => (
-                      <div key={i} className="w-3 h-3 border-2 border-white/60 rounded-full"></div>
-                    ))}
-                  </div>
-                  
-                  {/* Wavy lines */}
-                  <div className="absolute bottom-20 left-8">
-                    <svg width="60" height="40" viewBox="0 0 60 40" className="text-gray-900/40">
-                      <path d="M0 20 Q15 10 30 20 T60 20" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <path d="M0 25 Q15 15 30 25 T60 25" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <path d="M0 30 Q15 20 30 30 T60 30" stroke="currentColor" strokeWidth="2" fill="none"/>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              {/* Profile image with creative mask */}
-              <div className="relative z-10 w-80 h-96 flex items-center justify-center">
+              {/* Profile image with rounded corners */}
+              <div className="relative w-80 h-96 flex items-center justify-center">
                 <div className="relative w-64 h-80 overflow-hidden rounded-3xl shadow-2xl">
-                  <div 
-                    className="absolute inset-0 flex items-center justify-center"
-                    style={{
-                      clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
+                  <img 
+                    src="/profile-photo.jpg"
+                    alt="Saurabh Pandey - Senior Privacy Engineer"
+                    className="w-full h-full object-cover object-center"
+                    loading="eager"
+                    onError={(e) => {
+                      console.error('Image failed to load:', e);
+                      e.target.style.backgroundColor = '#4a5568';
+                      e.target.style.display = 'flex';
+                      e.target.style.alignItems = 'center';
+                      e.target.style.justifyContent = 'center';
+                      e.target.innerHTML = '<span style="color: white; font-size: 14px;">SP</span>';
                     }}
-                  >
-                    <img 
-                      src="/profile-photo.jpg"
-                      alt="Saurabh Pandey - Senior Privacy Engineer"
-                      className="w-full h-full object-cover object-center"
-                      style={{
-                        transform: 'scale(1.1) translateY(-10px)',
-                        transformOrigin: 'center center'
-                      }}
-                      loading="eager"
-                      onError={(e) => {
-                        console.error('Image failed to load:', e);
-                        e.target.style.backgroundColor = '#4a5568';
-                        e.target.style.display = 'flex';
-                        e.target.style.alignItems = 'center';
-                        e.target.style.justifyContent = 'center';
-                        e.target.innerHTML = '<span style="color: white; font-size: 14px;">SP</span>';
-                      }}
-                      onLoad={() => console.log('Profile image loaded successfully')}
-                    />
-                  </div>
+                    onLoad={() => console.log('Profile image loaded successfully')}
+                  />
                 </div>
               </div>
             </motion.div>
