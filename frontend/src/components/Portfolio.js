@@ -117,7 +117,7 @@ const Portfolio = () => {
               <Badge 
                 key={index}
                 variant="outline" 
-                className="px-4 py-2 text-sm border-gray-300 text-gray-700"
+                className="px-4 py-2 text-sm border-gray-600 text-gray-300 bg-gray-800"
               >
                 {highlight}
               </Badge>
