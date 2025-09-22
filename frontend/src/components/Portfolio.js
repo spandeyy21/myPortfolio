@@ -237,7 +237,7 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-24 px-6 bg-gray-50">
+      <section id="experience" className="py-24 px-6 bg-gray-800">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -254,14 +254,14 @@ const Portfolio = () => {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="border-l-2 border-gray-300 pl-8 relative"
+                className="border-l-2 border-gray-600 pl-8 relative"
               >
-                <div className="absolute -left-2 top-0 w-4 h-4 bg-black rounded-full"></div>
-                <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-2xl font-normal mb-2">{job.title}</h3>
-                  <p className="text-gray-600 mb-2">{job.company}</p>
-                  <p className="text-sm text-gray-500 mb-4">{job.duration}</p>
-                  <p className="text-gray-700 leading-relaxed">{job.description}</p>
+                <div className="absolute -left-2 top-0 w-4 h-4 bg-white rounded-full"></div>
+                <div className="bg-gray-700 p-8 rounded-lg shadow-sm border border-gray-600">
+                  <h3 className="text-2xl font-normal mb-2 text-white">{job.title}</h3>
+                  <p className="text-gray-300 mb-2">{job.company}</p>
+                  <p className="text-sm text-gray-400 mb-4">{job.duration}</p>
+                  <p className="text-gray-300 leading-relaxed">{job.description}</p>
                 </div>
               </motion.div>
             ))}
