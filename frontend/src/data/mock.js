@@ -1,4 +1,4 @@
-import { Cloud, Shield, Database, Code, Mail, Phone, Linkedin } from "lucide-react";
+import { Cloud, Shield, Database, Code, Mail, Linkedin } from "lucide-react";
 
 const mockData = {
   navigation: [
