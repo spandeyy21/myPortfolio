@@ -89,54 +89,156 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-6xl md:text-8xl font-light tracking-tight leading-tight mb-6"
-          >
-            {mockData.hero.name}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl font-light text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
-          >
-            {mockData.hero.tagline}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-3 mb-12"
-          >
-            {mockData.hero.highlights.map((highlight, index) => (
-              <Badge 
-                key={index}
-                variant="outline" 
-                className="px-4 py-2 text-sm border-gray-600 text-gray-300 bg-gray-800"
-              >
-                {highlight}
-              </Badge>
+      <section id="hero" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+        {/* Abstract Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-cyan-400/20 rounded-full blur-lg"></div>
+          <div className="absolute bottom-40 left-20 w-20 h-20 bg-yellow-400/20 rounded-full blur-lg"></div>
+          <div className="absolute bottom-20 right-40 w-28 h-28 bg-green-400/20 rounded-full blur-xl"></div>
+          
+          {/* Geometric shapes */}
+          <div className="absolute top-32 right-32 w-16 h-16 border-2 border-blue-400/30 rotate-45"></div>
+          <div className="absolute bottom-32 left-32 w-12 h-12 border-2 border-cyan-400/30 rotate-12"></div>
+          
+          {/* Dot patterns */}
+          <div className="absolute top-60 left-1/4 grid grid-cols-4 gap-2 opacity-30">
+            {[...Array(16)].map((_, i) => (
+              <div key={i} className="w-1 h-1 bg-blue-400 rounded-full"></div>
             ))}
-          </motion.div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Left side - Text content */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="flex justify-center"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
           >
-            <button
-              onClick={() => scrollToSection("about")}
-              className="animate-bounce p-2 rounded-full hover:bg-gray-800 transition-colors duration-300"
+            <div className="inline-flex items-center space-x-2 mb-4">
+              <span className="text-2xl">👋</span>
+            </div>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl md:text-6xl font-bold tracking-tight leading-tight text-white"
             >
-              <ChevronDown className="w-6 h-6 text-gray-400" />
-            </button>
+              Hello, I am <br />
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                {mockData.hero.name}
+              </span>
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-lg"
+            >
+              {mockData.hero.tagline}
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-wrap gap-3"
+            >
+              {mockData.hero.highlights.map((highlight, index) => (
+                <Badge 
+                  key={index}
+                  variant="outline" 
+                  className="px-4 py-2 text-sm border-gray-600 text-gray-300 bg-gray-800/50 backdrop-blur-sm"
+                >
+                  {highlight}
+                </Badge>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right side - Creative profile image */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative flex justify-center lg:justify-end"
+          >
+            {/* Background creative shapes */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative w-80 h-96">
+                {/* Colorful background sections */}
+                <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-b from-yellow-400/80 to-yellow-500/80 rounded-l-3xl"></div>
+                <div className="absolute top-0 left-20 w-32 h-full bg-gradient-to-b from-cyan-400/80 to-blue-500/80"></div>
+                <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-b from-blue-500/80 to-purple-600/80 rounded-r-3xl"></div>
+                
+                {/* Pattern overlays */}
+                <div className="absolute top-4 left-4 w-28 h-full opacity-60">
+                  <div className="grid grid-cols-6 gap-1 h-full">
+                    {[...Array(180)].map((_, i) => (
+                      <div key={i} className="w-1 h-1 bg-gray-900 rounded-full"></div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="absolute top-4 left-24 w-28 h-full opacity-40">
+                  <div className="grid grid-cols-6 gap-1 h-full">
+                    {[...Array(180)].map((_, i) => (
+                      <div key={i} className="w-1 h-1 bg-white rounded-full"></div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Decorative elements */}
+                <div className="absolute top-8 right-8 space-y-2">
+                  {[...Array(8)].map((_, i) => (
+                    <div key={i} className="w-3 h-3 border-2 border-white/60 rounded-full"></div>
+                  ))}
+                </div>
+                
+                {/* Wavy lines */}
+                <div className="absolute bottom-20 left-8">
+                  <svg width="60" height="40" viewBox="0 0 60 40" className="text-gray-900/40">
+                    <path d="M0 20 Q15 10 30 20 T60 20" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    <path d="M0 25 Q15 15 30 25 T60 25" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    <path d="M0 30 Q15 20 30 30 T60 30" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Profile image with creative mask */}
+            <div className="relative z-10 w-80 h-96 flex items-center justify-center">
+              <div className="relative w-64 h-80">
+                <div 
+                  className="w-full h-full bg-cover bg-center bg-no-repeat rounded-3xl shadow-2xl"
+                  style={{
+                    backgroundImage: `url('https://customer-assets.emergentagent.com/job_data-governance-1/artifacts/hqmhyi1a_profile%20photo.jpg')`,
+                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
+                  }}
+                ></div>
+              </div>
+            </div>
           </motion.div>
         </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <button
+            onClick={() => scrollToSection("about")}
+            className="animate-bounce p-2 rounded-full hover:bg-gray-800 transition-colors duration-300"
+          >
+            <ChevronDown className="w-6 h-6 text-gray-400" />
+          </button>
+        </motion.div>
       </section>
 
       {/* About Section */}
