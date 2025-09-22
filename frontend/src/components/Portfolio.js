@@ -140,7 +140,7 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 px-6 bg-gray-50">
+      <section id="about" className="py-24 px-6 bg-gray-800">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -157,26 +157,30 @@ const Portfolio = () => {
             className="grid md:grid-cols-2 gap-12 items-center"
           >
             <div>
-              <div className="bg-gray-200 aspect-square rounded-lg mb-6 flex items-center justify-center">
-                <span className="text-gray-500 text-sm">Professional Photo</span>
+              <div className="aspect-square rounded-lg mb-6 overflow-hidden">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_data-governance-1/artifacts/hqmhyi1a_profile%20photo.jpg"
+                  alt="Saurabh Pandey"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             <div className="space-y-6">
-              <p className="text-lg leading-relaxed text-gray-700">
+              <p className="text-lg leading-relaxed text-gray-300">
                 {mockData.about.description}
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <MapPin className="w-5 h-5 text-gray-500" />
-                  <span className="text-gray-600">{mockData.about.location}</span>
+                  <MapPin className="w-5 h-5 text-gray-400" />
+                  <span className="text-gray-300">{mockData.about.location}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Calendar className="w-5 h-5 text-gray-500" />
-                  <span className="text-gray-600">{mockData.about.experience}</span>
+                  <Calendar className="w-5 h-5 text-gray-400" />
+                  <span className="text-gray-300">{mockData.about.experience}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Building className="w-5 h-5 text-gray-500" />
-                  <span className="text-gray-600">{mockData.about.currentRole}</span>
+                  <Building className="w-5 h-5 text-gray-400" />
+                  <span className="text-gray-300">{mockData.about.currentRole}</span>
                 </div>
               </div>
             </div>
