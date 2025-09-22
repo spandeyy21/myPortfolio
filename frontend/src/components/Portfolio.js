@@ -288,15 +288,15 @@ const Portfolio = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <Card className="border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <Card className="border-gray-700 bg-gray-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <CardHeader>
-                    <CardTitle className="text-xl font-normal mb-2">{project.title}</CardTitle>
+                    <CardTitle className="text-xl font-normal mb-2 text-white">{project.title}</CardTitle>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.map((tech, techIndex) => (
                         <Badge 
                           key={techIndex}
                           variant="outline" 
-                          className="text-xs border-gray-300"
+                          className="text-xs border-gray-600 text-gray-300"
                         >
                           {tech}
                         </Badge>
@@ -304,7 +304,7 @@ const Portfolio = () => {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-gray-700 leading-relaxed">
+                    <CardDescription className="text-gray-300 leading-relaxed">
                       {project.description}
                     </CardDescription>
                   </CardContent>
