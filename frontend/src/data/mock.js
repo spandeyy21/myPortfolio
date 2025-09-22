@@ -32,22 +32,22 @@ const mockData = {
   skills: [
     {
       category: "Cloud & Infrastructure",
-      icon: <Cloud className="w-5 h-5 text-gray-600" />,
+      icon: <Cloud className="w-5 h-5 text-gray-400" />,
       items: ["Google Cloud Platform", "Cloud Spanner", "BigQuery", "Cloud Dataflow", "GCP Services"]
     },
     {
       category: "Privacy & Security",
-      icon: <Shield className="w-5 h-5 text-gray-600" />,
+      icon: <Shield className="w-5 h-5 text-gray-400" />,
       items: ["GDPR Compliance", "CCPA", "BigID", "OneTrust", "Privacy by Design", "Data Governance"]
     },
     {
       category: "Big Data & Analytics",
-      icon: <Database className="w-5 h-5 text-gray-600" />,
+      icon: <Database className="w-5 h-5 text-gray-400" />,
       items: ["Hadoop", "Apache Spark", "PySpark", "HDFS", "Hive", "Data Pipelines"]
     },
     {
       category: "Programming & Tools",
-      icon: <Code className="w-5 h-5 text-gray-600" />,
+      icon: <Code className="w-5 h-5 text-gray-400" />,
       items: ["Python", "Spark RDD", "Shell Scripting", "SQL", "Data Analytics", "ETL"]
     }
   ],
