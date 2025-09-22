@@ -51,15 +51,15 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-gray-900 text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+      <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-700">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="font-light text-xl tracking-tight"
+              className="font-light text-xl tracking-tight text-white"
             >
               SP
             </motion.div>
@@ -70,8 +70,8 @@ const Portfolio = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`text-sm font-normal transition-all duration-300 hover:-translate-y-0.5 ${
                     activeSection === item.id 
-                      ? "text-black font-medium" 
-                      : "text-gray-600 hover:text-black"
+                      ? "text-white font-medium" 
+                      : "text-gray-300 hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -80,7 +80,7 @@ const Portfolio = () => {
             </div>
             <Button 
               onClick={() => scrollToSection("contact")}
-              className="bg-black text-white hover:bg-gray-800 transition-all duration-300"
+              className="bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300"
             >
               Contact
             </Button>
