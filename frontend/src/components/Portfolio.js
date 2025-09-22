@@ -257,15 +257,17 @@ const Portfolio = () => {
                     }}
                   >
                     <img 
-                      src="https://customer-assets.emergentagent.com/job_data-governance-1/artifacts/hqmhyi1a_profile%20photo.jpg"
+                      src="/profile-photo.jpg"
                       alt="Saurabh Pandey - Senior Privacy Engineer"
                       className="w-full h-full object-cover"
                       loading="eager"
-                      crossOrigin="anonymous"
                       onError={(e) => {
                         console.error('Image failed to load:', e);
                         e.target.style.backgroundColor = '#4a5568';
-                        e.target.alt = 'Profile image loading...';
+                        e.target.style.display = 'flex';
+                        e.target.style.alignItems = 'center';
+                        e.target.style.justifyContent = 'center';
+                        e.target.innerHTML = '<span style="color: white; font-size: 14px;">SP</span>';
                       }}
                       onLoad={() => console.log('Profile image loaded successfully')}
                     />
