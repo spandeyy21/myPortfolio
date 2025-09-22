@@ -251,7 +251,7 @@ const Portfolio = () => {
               <div className="relative z-10 w-80 h-96 flex items-center justify-center">
                 <div className="relative w-64 h-80 overflow-hidden rounded-3xl shadow-2xl">
                   <div 
-                    className="absolute inset-0"
+                    className="absolute inset-0 flex items-center justify-center"
                     style={{
                       clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
                     }}
@@ -259,7 +259,11 @@ const Portfolio = () => {
                     <img 
                       src="/profile-photo.jpg"
                       alt="Saurabh Pandey - Senior Privacy Engineer"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
+                      style={{
+                        transform: 'scale(1.1) translateY(-10px)',
+                        transformOrigin: 'center center'
+                      }}
                       loading="eager"
                       onError={(e) => {
                         console.error('Image failed to load:', e);
